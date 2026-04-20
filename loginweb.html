@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>LaundryKu - Solusi Laundry Praktis</title>
+    <style>
+        /* ---------- RESET & GLOBAL ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e9f3ff 0%, #d4e6ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        /* Container utama untuk centering sempurna */
+        .auth-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* Card styling dengan dimensi & efek modern */
+        .auth-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0, 70, 120, 0.15), 0 1px 3px rgba(0, 0, 0, 0.02);
+            padding: 2rem 1.8rem 2.2rem 1.8rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .auth-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 40px -14px rgba(0, 90, 140, 0.2);
+        }
+
+        /* Header card */
+        .card-header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .brand-icon {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1f4f7a;
+            letter-spacing: -0.3px;
+        }
+
+        .card-header p {
+            font-size: 0.85rem;
+            color: #6c8db0;
+            margin-top: 0.3rem;
+        }
+
+        /* Form group styling */
+        .form-group {
+            margin-bottom: 1.3rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #2c6288;
+            margin-bottom: 0.45rem;
+            letter-spacing: -0.2px;
+        }
+
+        .form-group input {
+            padding: 0.85rem 1rem;
+            border: 1.5px solid #e2edf7;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            background-color: #fefefe;
+            transition: all 0.2s ease;
+            outline: none;
+            color: #1e2f3e;
+        }
+
+        .form-group input:focus {
+            border-color: #7bb3d9;
+            box-shadow: 0 0 0 3px rgba(100, 160, 210, 0.2);
+            background-color: #ffffff;
+        }
+
+        /* Tombol biru soft */
+        .btn-primary {
+            width: 100%;
+            background: #5f9cd1;
+            border: none;
+            padding: 0.85rem;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.05s linear;
+            margin-top: 0.5rem;
+            box-shadow: 0 6px 12px -8px rgba(65, 120, 170, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #4682b4;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        /* Link navigasi antar halaman */
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+            color: #5a7d9e;
+        }
+
+        .auth-footer a {
+            color: #2f6e9e;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 0.3rem;
+            transition: color 0.2s;
+        }
+
+        .auth-footer a:hover {
+            color: #1a4b6e;
+            text-decoration: underline;
+        }
+
+        /* sedikit space antar row untuk register */
+        .row-2cols {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .row-2cols .form-group {
+            flex: 1;
+        }
+
+        /* responsive kecil */
+        @media (max-width: 520px) {
+            .auth-card {
+                padding: 1.6rem;
+            }
+            .row-2cols {
+                flex-direction: column;
+                gap: 0;
+            }
+            .btn-primary {
+                padding: 0.75rem;
+            }
+        }
+
+        /* Simbol required sedikit (hanya estetika) */
+        .optional-note {
+            font-size: 0.7rem;
+            color: #8fbbdf;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================= -->
+<!--  HALAMAN LOGIN (Pelanggan / Admin sederhana)   -->
+<!-- ============================================= -->
+
+<div class="auth-container" id="loginPage">
+    <div class="auth-card">
+        <div class="card-header">
+            <div class="brand-icon">🧺✨</div>
+            <h2>Masuk ke Akun</h2>
+            <p>Laundry kilat, bersih & wangi</p>
+        </div>
+
+        <form action="#" method="post">
+            <div class="form-group">
+                <label>Alamat Email</label>
+                <input type="email" placeholder="contoh@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+                <label>Kata Sandi</label>
+                <input type="password" placeholder="••••••••" autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn-primary">Login Sekarang</button>
+        </form>
+
+        <div class="auth-footer">
+            ⚡ Belum punya akun?
+            <a href="#registerPage" id="goToRegisterLink">Daftar di sini</a>
+        </div>
+        <div class="optional-note" style="text-align: center; margin-top: 1rem;">
+            Demo: cukup navigasi antar halaman
+        </div>
+    </div>
+</div>
+
+<!-- ============================================= -->
+<!--  HALAMAN REGISTER (Pendaftaran Pelanggan)     -->
+<!-- ============================================= -->
+
+<div class="auth-container" id="registerPage" style="display: none;">
+    <div class="auth-card">
+        <div class="card-header">
+            <div class="brand-icon">📝🧼</div>
+            <h2>Daftar Pelanggan</h2>
+            <p>Nikmati layanan laundry terbaik</p>
+        </div>
+
+        <form action="#" method="post">
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="kita Laundry" autocomplete="name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="email@laundryku.com" autocomplete="email">
+            </div>
+            <div class="row-2cols">
+                <div class="form-group">
+                    <label>Nomor HP</label>
+                    <input type="tel" placeholder="0812-3456-7890">
+                </div>
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <input type="text" placeholder="Jl. Mawar No. 12">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Buat password kuat" autocomplete="new-password">
+            </div>
+            <button type="submit" class="btn-primary">Daftar Sekarang</button>
+        </form>
+
+        <div class="auth-footer">
+            ✅ Sudah punya akun?
+            <a href="#loginPage" id="goToLoginLink">Login di sini</a>
+        </div>
+        <div class="optional-note" style="text-align: center; margin-top: 1rem;">
+            Gunakan link di bawah untuk beralih halaman
+        </div>
+    </div>
+</div>
+
+<!-- Sedikit JavaScript untuk navigasi antar halaman  -->
+<script>
+    (function() {
+        // Ambil elemen container
+        const loginContainer = document.getElementById('loginPage');
+        const registerContainer = document.getElementById('registerPage');
+
+        // Fungsi untuk menampilkan halaman tertentu
+        function showLogin() {
+            if (loginContainer) loginContainer.style.display = 'block';
+            if (registerContainer) registerContainer.style.display = 'none';
+            // update URL hash tanpa reload (optional)
+            window.location.hash = 'login';
+        }
+
+        function showRegister() {
+            if (loginContainer) loginContainer.style.display = 'none';
+            if (registerContainer) registerContainer.style.display = 'block';
+            window.location.hash = 'register';
+        }
+
+        // Daftarkan event ke tombol link di dalam halaman
+        const goToRegister = document.getElementById('goToRegisterLink');
+        const goToLogin = document.getElementById('goToLoginLink');
+
+        if (goToRegister) {
+            goToRegister.addEventListener('click', function(e) {
+                e.preventDefault();
+                showRegister();
+            });
+        }
+
+        if (goToLogin) {
+            goToLogin.addEventListener('click', function(e) {
+                e.preventDefault();
+                showLogin();
+            });
+        }
+
+        // Saat pertama load, cek hash URL (agar bisa langsung menampilkan sesuai fragment)
+        // Default tampilkan login, kecuali hash #register
+        const initialHash = window.location.hash;
+        if (initialHash === '#register') {
+            showRegister();
+        } else {
+            showLogin(); // termasuk jika hash kosong atau #login
+        }
+
+        // Tangani perubahan hash (bila user klik back/forward)
+        window.addEventListener('hashchange', function() {
+            const hash = window.location.hash;
+            if (hash === '#register') {
+                showRegister();
+            } else if (hash === '#login') {
+                showLogin();
+            } else {
+                // jika hash tidak dikenal, default login
+                showLogin();
+            }
+        });
+    })();
+</script>
+
+<!-- Catatan integrasi Laravel Blade tips and trikk :
+     - Gunakan route named, ubah action form menjadi {{ route('login') }} atau {{ route('register') }}
+     - Tambahkan @csrf di dalam form
+     - Nilai input bisa menggunakan old() jika terjadi error
+     - Struktur class sudah siap pakai untuk diintegrasikan ke blade components.
+-->
+</body>
+</html>
