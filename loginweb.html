@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>LaundryKu - Solusi Laundry Praktis</title>
     <style>
-        /* ---------- RESET & GLOBAL ---------- */
+        
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +29,7 @@
             margin: 0 auto;
         }
 
-        /* Card styling dengan dimensi & efek modern */
+        /* Card styling*/
         .auth-card {
             background: #ffffff;
             border-radius: 28px;
@@ -153,39 +153,245 @@
         .row-2cols .form-group {
             flex: 1;
         }
-
-        /* responsive kecil */
-        @media (max-width: 520px) {
-            .auth-card {
-                padding: 1.6rem;
-            }
-            .row-2cols {
-                flex-direction: column;
-                gap: 0;
-            }
-            .btn-primary {
-                padding: 0.75rem;
-            }
+        
+        /* style buat lading page nya*/
+        
+        .hero-section {
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        /* Simbol required sedikit (hanya estetika) */
-        .optional-note {
+        .hero-section .brand-icon-large {
+            font-size: 3.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f4f7a;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #5a7d9e;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .services-section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c6288;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #7bb3d9;
+            margin: 0.5rem auto 0;
+            border-radius: 4px;
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .service-item {
+            flex: 1;
+            min-width: 160px;
+            background: #f8fbfe;
+            padding: 1.2rem 0.8rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: all 0.2s ease;
+            border: 1px solid #e2edf7;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            background: #ffffff;
+            border-color: #b8d4f0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-item h3 {
+            font-size: 1rem;
+            color: #1f4f7a;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .service-desc {
+            font-size: 0.75rem;
+            color: #6c8db0;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #4682b4;
+        }
+
+        .info-box {
+            background: #f0f7fe;
+            border-radius: 20px;
+            padding: 1.2rem;
+            margin-bottom: 1.8rem;
+            text-align: center;
+            border-left: 4px solid #5f9cd1;
+        }
+
+        .info-box p {
+            color: #2c6288;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        .btn-login {
+            display: inline-block;
+            background: #5f9cd1;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 14px -6px rgba(65, 120, 170, 0.4);
+        }
+
+        .btn-login:hover {
+            background: #4682b4;
+            transform: translateY(-2px);
+        }
+
+        .landing-footer {
+            text-align: center;
+            margin-top: 1.5rem;
             font-size: 0.7rem;
             color: #8fbbdf;
-            margin-top: 0.2rem;
+            border-top: 1px solid #e2edf7;
+            padding-top: 1rem;
+            }
+
+        /* responsive kecil */
+        @media (max-width: 768px) {
+            .landing card, .auth-card {
+                padding: 1.5rem;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .row.2cols {
+                flex-directiom: column;
+                gap: 0;
+            }
+            services-gird {
+                flex-direction: column;
+            }
         }
+
+        
+
     </style>
 </head>
 <body>
 
-<!-- ============================================= -->
-<!--  HALAMAN LOGIN (Pelanggan / Admin sederhana)   -->
-<!-- ============================================= -->
+<div class="page-container">
+    
+    <!-- HALAMAN LANDING PAGe -->
+    <div id="landingPage">
+        <div class="landing-card">
+            <div class="hero-section">
+                <div class="brand-icon-large">🧺✨</div>
+                <h1>LaundryKu</h1>
+                <p class="tagline">
+                    Aplikasi pemesanan laundry yang memudahkan pelanggan dalam mencuci pakaian 
+                    dengan cepat dan praktis. Dengan LaundryKu, masalah cucian Anda bisa cepat terselesaikan.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <p>
+                    :) <strong>Layanan Laundry Profesional</strong> — Kebersihan, kerapihan, dan kecepatan 
+                    adalah prioritas kami. Tersedia layanan antar-jemput untuk kenyamanan Anda.
+                </p>
+            </div>
+
+            <div class="services-section">
+                <h2 class="section-title">:D Harga Laundry</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <div class="service-icon">👕</div>
+                        <h3>Cuci Kering</h3>
+                        <div class="service-desc">Cuci + kering</div>
+                        <div class="service-price">Rp 7.000/kg</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">👔</div>
+                        <h3>Cuci Setrika</h3>
+                        <div class="service-desc">Cuci + kering + setrika</div>
+                        <div class="service-price">Rp 50.000/kg</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🧥</div>
+                        <h3>Setrika Saja</h3>
+                        <div class="service-desc">Khusus setrika</div>
+                        <div class="service-price">Rp 5.000/kg</div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-icon">🧸</div>
+                        <h3>Express 3 Jam</h3>
+                        <div class="service-desc">Cepat kilat</div>
+                        <div class="service-price">Rp 15.000/kg</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section" style="text-align: center;">
+                <button class="btn-login" id="landingToLoginBtn">Login untuk Memesan</button>
+            </div>
+
+            <div class="landing-footer">
+                <span> LaundryKu di jamin deh — Bersih, Wangi, Cepat ꒰⁠⑅⁠ᵕ⁠༚⁠ᵕ⁠꒱⁠˖⁠♡</span>
+            </div>
+        </div>
+    </div>
+    
+<!--  HALAMAN Loginn (Pelanggan / Admin)    -->
+
 
 <div class="auth-container" id="loginPage">
     <div class="auth-card">
         <div class="card-header">
-            <div class="brand-icon">🧺✨</div>
+            <div class="brand-icon">🧺</div>
             <h2>Masuk ke Akun</h2>
             <p>Laundry kilat, bersih & wangi</p>
         </div>
@@ -203,18 +409,18 @@
         </form>
 
         <div class="auth-footer">
-            ⚡ Belum punya akun?
+            😼 Belum punya akun?
             <a href="#registerPage" id="goToRegisterLink">Daftar di sini</a>
         </div>
-        <div class="optional-note" style="text-align: center; margin-top: 1rem;">
-            Demo: cukup navigasi antar halaman
+        <div style="text-align: canter; margin-top: 1 rem;">
+            <a href="#" id="loginToRegisterLink" style="font-size: 0.8rem; color: #8fbbdhf;" kembali Beranda </a>
         </div>
+        
     </div>
 </div>
 
-<!-- ============================================= -->
+
 <!--  HALAMAN REGISTER (Pendaftaran Pelanggan)     -->
-<!-- ============================================= -->
 
 <div class="auth-container" id="registerPage" style="display: none;">
     <div class="auth-card">
@@ -264,70 +470,89 @@
 <script>
     (function() {
         // Ambil elemen container
+        const landingPage = document.getElementByod('landingPage')
         const loginContainer = document.getElementById('loginPage');
         const registerContainer = document.getElementById('registerPage');
 
-        // Fungsi untuk menampilkan halaman tertentu
-        function showLogin() {
-            if (loginContainer) loginContainer.style.display = 'block';
-            if (registerContainer) registerContainer.style.display = 'none';
-            // update URL hash tanpa reload (optional)
-            window.location.hash = 'login';
-        }
+        // Fungsi navigasi
+    function showLanding() {
+        landingPage.style.display = 'block';
+        loginPage.style.display = 'none';
+        registerPage.style.display = 'none';
+        window.location.hash = 'landing';
+    }
 
-        function showRegister() {
-            if (loginContainer) loginContainer.style.display = 'none';
-            if (registerContainer) registerContainer.style.display = 'block';
-            window.location.hash = 'register';
-        }
+    function showLogin() {
+        landingPage.style.display = 'none';
+        loginPage.style.display = 'block';
+        registerPage.style.display = 'none';
+        window.location.hash = 'login';
+    }
 
-        // Daftarkan event ke tombol link di dalam halaman
-        const goToRegister = document.getElementById('goToRegisterLink');
-        const goToLogin = document.getElementById('goToLoginLink');
+    function showRegister() {
+        landingPage.style.display = 'none';
+        loginPage.style.display = 'none';
+        registerPage.style.display = 'block';
+        window.location.hash = 'register';
+    }
 
-        if (goToRegister) {
-            goToRegister.addEventListener('click', function(e) {
-                e.preventDefault();
-                showRegister();
-            });
-        }
+    // Event listener untuk semua tombol navigasi
+    document.getElementById('landingToLoginBtn').addEventListener('click', showLogin);
+    document.getElementById('loginToRegisterLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        showRegister();
+    });
+    document.getElementById('registerToLoginLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        showLogin();
+    });
+    document.getElementById('loginToLandingLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        showLanding();
+    });
+    document.getElementById('registerToLandingLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        showLanding();
+    });
 
-        if (goToLogin) {
-            goToLogin.addEventListener('click', function(e) {
-                e.preventDefault();
-                showLogin();
-            });
-        }
+    // Cek hash URL saat pertama load
+    const initialHash = window.location.hash;
+    if (initialHash === '#login') {
+        showLogin();
+    } else if (initialHash === '#register') {
+        showRegister();
+    } else {
+        showLanding(); // default landing page
+    }
 
-        // Saat pertama load, cek hash URL (agar bisa langsung menampilkan sesuai fragment)
-        // Default tampilkan login, kecuali hash #register
-        const initialHash = window.location.hash;
-        if (initialHash === '#register') {
+    // Handle perubahan hash (back/forward browser)
+    window.addEventListener('hashchange', function() {
+        const hash = window.location.hash;
+        if (hash === '#login') {
+            showLogin();
+        } else if (hash === '#register') {
             showRegister();
+        } else if (hash === '#landing') {
+            showLanding();
         } else {
-            showLogin(); // termasuk jika hash kosong atau #login
+            showLanding();
         }
+    });
 
-        // Tangani perubahan hash (bila user klik back/forward)
-        window.addEventListener('hashchange', function() {
-            const hash = window.location.hash;
-            if (hash === '#register') {
-                showRegister();
-            } else if (hash === '#login') {
-                showLogin();
-            } else {
-                // jika hash tidak dikenal, default login
-                showLogin();
+    // untuk form submit (tanpa back)
+    const allForms = document.querySelectorAll('form');
+    allForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (this.closest('#loginPage')) {
+                alert('Demo: Login berhasil (tidak ada backend)');
+            } else if (this.closest('#registerPage')) {
+                alert('Demo: Pendaftaran berhasil (tidak ada backend)');
             }
         });
-    })();
+    });
 </script>
 
-<!-- Catatan integrasi Laravel Blade tips and trikk :
-     - Gunakan route named, ubah action form menjadi {{ route('login') }} atau {{ route('register') }}
-     - Tambahkan @csrf di dalam form
-     - Nilai input bisa menggunakan old() jika terjadi error
-     - Struktur class sudah siap pakai untuk diintegrasikan ke blade components.
--->
+    
 </body>
 </html>
