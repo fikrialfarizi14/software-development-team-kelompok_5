@@ -1,6 +1,5 @@
 -- ============================================================
 -- LaundryKu - Database Setup
--- Import file ini ke MySQL / phpMyAdmin
 -- ============================================================
 
 CREATE DATABASE IF NOT EXISTS laundrykhu
