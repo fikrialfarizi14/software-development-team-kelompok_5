@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaundryKu - Pesanan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e9f3ff 0%, #d4e6ff 100%);
+            padding: 1.5rem;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+  
+        .navbar {
+            background: white;
+            border-radius: 60px;
+            padding: 0.8rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f4f7a;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a6f8f;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #1f4f7a;
+        }
+
+        /* Card Harga (grid) */
+        .price-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .price-title {
+            font-size: 1.2rem;
+            color: #1f4f7a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+
+        .price-card {
+            background: white;
+            padding: 1rem 0.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2edf7;
+        }
+
+        .price-card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .price-card .service {
+            font-weight: 600;
+            color: #2c6288;
+            font-size: 0.85rem;
+        }
+
+        .price-card .price {
+            color: #4682b4;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* Form Card */
+        .form-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-card h2 {
+            color: #1f4f7a;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: #2c6288;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid #e2edf7;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: #5f9cd1;
+        }
+
+        .total-box {
+            background: #e9f3ff;
+            padding: 0.8rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .total-box span {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1f4f7a;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background: #5f9cd1;
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background: #4682b4;
+        }
+
+        .order-summary {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2edf7;
+        }
+
+        .order-summary p {
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 550px) {
+            .price-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .nav-links a {
+                margin: 0 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">🧺 LaundryKu</div>
+        <div class="nav-links">
+            <a href="#" onclick="showPesanan()">Pesanan Saya</a>
+            <a href="login.html">Logout</a>
+        </div>
+    </div>
+
+
+    <div class="price-section">
+        <div class="price-title">📋 Harga Layanan</div>
+        <div class="price-grid">
+            <div class="price-card">
+                <div class="service">Cuci Kering</div>
+                <div class="price">Rp7.000/kg</div>
+            </div>
+            <div class="price-card">
+                <div class="service">Cuci Setrika</div>
+                <div class="price">Rp10.000/kg</div>
+            </div>
+            <div class="price-card">
+                <div class="service">Setrika Saja</div>
+                <div class="price">Rp5.000/kg</div>
+            </div>
+            <div class="price-card">
+                <div class="service">Express</div>
+                <div class="price">Rp15.000/kg</div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="form-card" id="formPesanan">
+        <h2>📝 Buat Pesanan</h2>
+        <div class="form-group">
+            <label>Jenis Layanan</label>
+            <select id="jenis">
+                <option value="7000">Cuci Kering - Rp7.000/kg</option>
+                <option value="10000">Cuci Setrika - Rp10.000/kg</option>
+                <option value="5000">Setrika Saja - Rp5.000/kg</option>
+                <option value="15000">Express - Rp15.000/kg</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Berat (kg)</label>
+            <input type="number" id="berat" value="1" min="0.5" step="0.5">
+        </div>
+        <div class="total-box">
+            💰 Total: <span id="total">Rp7.000</span>
+        </div>
+        <button class="btn-primary" onclick="simpanPesanan()">Simpan Pesanan</button>
+    </div>
+
+    <!-- Ringkasan Pesanan (akan muncul setelah simpan) -->
+    <div class="form-card" id="ringkasanPesanan" style="display: none; margin-top: 1rem;">
+        <h2>📋 Pesanan Terakhir</h2>
+        <div id="detailPesanan" class="order-summary"></div>
+        <button class="btn-primary" style="background: #e2edf7; color: #4682b4; margin-top: 0.5rem;" onclick="buatBaru()">+ Buat Pesanan Baru</button>
+    </div>
+</div>
+
+<script>
+    function hitungTotal() {
+        const harga = parseInt(document.getElementById('jenis').value);
+        let berat = parseFloat(document.getElementById('berat').value);
+        if (isNaN(berat) || berat <= 0) berat = 0;
+        const total = harga * berat;
+        document.getElementById('total').innerText = formatRupiah(total);
+        return { harga, berat, total };
+    }
+
+    function formatRupiah(angka) {
+        return new Intl.NumberFormat('id-ID', {
+            style: 'currency', currency: 'IDR', minimumFractionDigits: 0
+        }).format(angka);
+    }
+
+    function simpanPesanan() {
+        const select = document.getElementById('jenis');
+        const harga = parseInt(select.value);
+        let berat = parseFloat(document.getElementById('berat').value);
+        if (isNaN(berat) || berat <= 0) {
+            alert("Masukkan berat yang valid");
+            return;
+        }
+        const total = harga * berat;
+        const jenisText = select.options[select.selectedIndex].text.split(' - ')[0];
+
+        const pesanan = {
+            jenis: jenisText,
+            hargaPerKg: harga,
+            berat: berat,
+            total: total,
+            waktu: new Date().toLocaleString()
+        };
+        localStorage.setItem('pesananLaundry', JSON.stringify(pesanan));
+        tampilkanRingkasan();
+        alert("Pesanan disimpan!");
+    }
+
+    function tampilkanRingkasan() {
+        const data = localStorage.getItem('pesananLaundry');
+        if (data) {
+            const p = JSON.parse(data);
+            document.getElementById('detailPesanan').innerHTML = `
+                <p><strong>Jenis:</strong> ${p.jenis}</p>
+                <p><strong>Harga/kg:</strong> ${formatRupiah(p.hargaPerKg)}</p>
+                <p><strong>Berat:</strong> ${p.berat} kg</p>
+                <p><strong>Total:</strong> ${formatRupiah(p.total)}</p>
+                <p><small>📅 ${p.waktu}</small></p>
+            `;
+            document.getElementById('formPesanan').style.display = 'none';
+            document.getElementById('ringkasanPesanan').style.display = 'block';
+        }
+    }
+
+    function buatBaru() {
+        document.getElementById('formPesanan').style.display = 'block';
+        document.getElementById('ringkasanPesanan').style.display = 'none';
+        document.getElementById('berat').value = 1;
+        document.getElementById('jenis').value = "7000";
+        hitungTotal();
+    }
+
+    function showPesanan() {
+        if (localStorage.getItem('pesananLaundry')) {
+            tampilkanRingkasan();
+        } else {
+            alert("Belum ada pesanan. Silakan buat pesanan dulu.");
+            buatBaru();
+        }
+    }
+
+
+    document.getElementById('jenis').addEventListener('change', hitungTotal);
+    document.getElementById('berat').addEventListener('input', hitungTotal);
+    hitungTotal();
+
+
+    if (localStorage.getItem('pesananLaundry')) {
+        tampilkanRingkasan();
+    } else {
+        document.getElementById('formPesanan').style.display = 'block';
+    }
+</script>
+</body>
+</html>
